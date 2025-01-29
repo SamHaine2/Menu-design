@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #222;
+}
+
+.menu {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+.menu-button {
+    width: 80px;
+    height: 80px;
+    background-color: #ff4757;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    user-select: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+.menu-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #0a74da;
+}
+
+/* Disposition des liens */
+.menu-item:nth-child(1) { top: -60px; left: 15px; }
+.menu-item:nth-child(2) { top: 15px; right: -60px; }
+.menu-item:nth-child(3) { bottom: -60px; left: 15px; }
+.menu-item:nth-child(4) { top: 15px; left: -60px; }
+
+/* Animation ouverture */
+#menu-toggle:checked + .menu-button {
+    transform: rotate(45deg);
+    background-color: #e84118;
+}
+
+#menu-toggle:checked ~ .menu-items {
+    transform: scale(1);
+}
